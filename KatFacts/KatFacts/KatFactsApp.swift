@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+/// Simple app for skills demonstration
 struct KatFactsApp: App {
     var body: some Scene {
         WindowGroup {

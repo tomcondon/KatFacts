@@ -20,6 +20,7 @@ final class KatFactsTests: XCTestCase {
 
     
     /// The most important test, perhaps. This SFSymbol must always load so it can be force unwrapped
+    /// in the application
     func testSFSymbolsAvailable() throws {
         XCTAssertNotNil(UIImage(systemName: "questionmark.app.dashed"))
     }

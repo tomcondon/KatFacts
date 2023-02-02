@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Not much to say here, hope to add a splash screen until the first data loads.
 struct ContentView: View {
     var body: some View {
         VStack {

@@ -7,48 +7,51 @@
 
 import SwiftUI
 
-let katFactErrorResultString = "No new cat facts this time!"
+/// Make cats facts retrieval errors silent while giving the user appropriate feedback
+let catFactErrorResultString = "No new cat facts this time, try again!"
+
+/// This is forced unwrpapping (bad in general) but it works here because if the runtime
+/// cannot do this then it is a general program failure and is covered by a unit test.
 let placeholderImage = UIImage(systemName: "questionmark.app.dashed")!
 
-
-/// <#Description#>
+/// The KatView model contains the published data for the KatView
+/// Modifying published properties require being on the main thread.
 @MainActor
 class KatViewModel: ObservableObject {
     @Published var catImage: UIImage = placeholderImage
-    @Published var catFactString: String = katFactErrorResultString
+    @Published var catFactString: String = catFactErrorResultString
     
     let restClient = KatServerClient()
     
-    /// <#Description#>
-    ///
-    ///
+    /// Return a new cat fact while returning a generic cat facte error string if
+    /// something goes wrong
     func fetchCatFact() async -> String {
         guard let catFact = try? await restClient.get(.catFact),
               let newCatFact = catFact.data.first else {
-            return katFactErrorResultString
+            return catFactErrorResultString
         }
         return newCatFact
     }
     
+    /// Return a new cat image while returning a generic image empty image if
+    /// something goes wrong
     func fetchCatImage() async -> UIImage {
+        ImageEndpoint.randomizeCatImage()
         guard let fetchedCatImage = try? await restClient.getImage(.catImage) else {
             return placeholderImage
         }
         return fetchedCatImage
     }
     
+    /// Fetches both the random cat image and cat fact
+    /// - NOTE: This use `async let` to ensure that all data from disparate sources are delivered simultaneously
     func fetchAllData() {
         Task {
             async let factString = fetchCatFact()
-            async let image = fetchCatImage()
+            let image = await fetchCatImage()
             
             catFactString = await factString
-            catImage = await image
+            catImage = image
         }
-        
-    }
-    
-    func randomizeCatURL() {
-        
     }
 }
