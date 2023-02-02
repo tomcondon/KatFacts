@@ -10,7 +10,7 @@ import SwiftUI
 /// Make cats facts retrieval errors silent while giving the user appropriate feedback
 let catFactErrorResultString = "No new cat facts this time, try again!"
 
-/// This is forced unwrpapping (bad in general) but it works here because if the runtime
+/// This is forced unwrapping (bad in almost aways) but it works here because if the runtime
 /// cannot do this then it is a general program failure and is covered by a unit test.
 let placeholderImage = UIImage(systemName: "questionmark.app.dashed")!
 
