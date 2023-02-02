@@ -13,6 +13,8 @@ import SwiftUI
 class KatServerClient {
     /// This is the coolest call. Given a relatively simple endpoint with Type,
     /// returns a Decodable using `async throws` semantics.
+    /// Relies on application to display error conditions as opposed to HTTP response codes.
+    /// A simlification.
     public func get<T: Decodable>(_ endpoint: Endpoint<T>) async throws -> T? {
         guard let url = endpoint.url else { return nil }
         
@@ -23,6 +25,8 @@ class KatServerClient {
     }
     
     /// This is a more pedestrain call to fetch an image using `async throws` semantics.
+    /// Relies on application to display error conditions as opposed to HTTP response codes.
+    /// A simlification. 
     public func getImage(_ imageEndpoint: ImageEndpoint) async throws -> UIImage? {
         guard let url = imageEndpoint.url else { return nil }
         

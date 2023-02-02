@@ -10,6 +10,9 @@ import Foundation
 /// Cool approach to integrate async networking calls with Codables
 /// Kudos to Paul Hudson and HackingWithSwift+ live event in the last week or so.
 /// Just had to try.
+/// See: https://www.hackingwithswift.com/plus/unwrap-live-2023/modern-safe-networking if you have paid for it.
+/// This guy is brilliant. And has Samoyeds. Inside joke? Paul would get it. I have 2 and dogsit a third during the weekdays.
+/// TREATS!
 struct Endpoint<T: Decodable> {
     var url: URL?
     var type: T.Type
