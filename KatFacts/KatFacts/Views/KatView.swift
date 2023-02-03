@@ -10,28 +10,58 @@ import SwiftUI
 /// The main view the user sees. Very simple.
 struct KatView: View {
     @StateObject private var katViewModel = KatViewModel()
-    var body: some View {
+    
+    /// This is our main body always shown after we first load data.
+    var mainBody: some View {
         VStack {
+            
             Image(uiImage: katViewModel.catImage)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(20.0)
-            // ScrollView is used here so that arbitraily large facts will
+                .aspectRatio(contentMode: .fill)
+                .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                .shadow(radius: 8)
+                .padding(.bottom, 20)
+            
+            // ScrollView is used here so that arbitraily long facts will
             // be readable.
             ScrollView(.vertical) {
                 Text(katViewModel.catFactString)
-                    .font(.body)
-                    .padding()
+                    .font(.title2)
+                    .foregroundColor(.white)
+                
             }
         }
-        // This will get called exactly once.
-        .task {
-            katViewModel.fetchAllData()
+        .padding(20)
+    }
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                //Define a screen color
+                LinearGradient (gradient: Gradient(colors:[.blue.opacity(0.2),.blue.opacity(0.9)]),
+                                startPoint: .top,
+                                endPoint: .bottom)
+                    .ignoresSafeArea()
+                
+                if katViewModel.isCatLoaded {
+                    mainBody
+                } else {
+                    // Our splash screen.
+                    Text("KatFacts")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                }
+            }
             
-        }
-        // This will get called on every "single" tap gesture.
-        .onTapGesture {
-            katViewModel.fetchAllData()
+            // This will get called exactly once.
+            .task {
+                katViewModel.fetchAllData()
+                
+            }
+            // This will get called on every "single" tap gesture.
+            .onTapGesture {
+                katViewModel.fetchAllData()
+            }
         }
     }
 }

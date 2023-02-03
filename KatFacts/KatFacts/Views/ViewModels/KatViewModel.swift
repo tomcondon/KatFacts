@@ -20,10 +20,12 @@ let placeholderImage = UIImage(systemName: "questionmark.app.dashed")!
 class KatViewModel: ObservableObject {
     @Published var catImage: UIImage = placeholderImage
     @Published var catFactString: String = catFactErrorResultString
+    //Show a splash screen the first time
+    @Published var isCatLoaded = false
     
     let restClient = KatServerClient()
     
-    /// Return a new cat fact while returning a generic cat facte error string if
+    /// Return a new cat fact while returning a generic cat fact error string if
     /// something goes wrong
     func fetchCatFact() async -> String {
         guard let catFact = try? await restClient.get(.catFact),
@@ -47,11 +49,16 @@ class KatViewModel: ObservableObject {
     /// - NOTE: This use `async let` to ensure that all data from disparate sources are delivered simultaneously
     func fetchAllData() {
         Task {
+            if !isCatLoaded {
+                // Do not care about exception here, this is just for looks upon startup
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+            }
             async let factString = fetchCatFact()
             let image = await fetchCatImage()
             
             catFactString = await factString
             catImage = image
+            isCatLoaded = true
         }
     }
 }

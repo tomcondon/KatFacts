@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8281A062298B1F1000E57073 /* CatFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8281A061298B1F1000E57073 /* CatFact.swift */; };
+		8281A065298C77BD00E57073 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8281A064298C77BD00E57073 /* SplashView.swift */; };
 		828631292989F11E00D56889 /* KatFactsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828631282989F11E00D56889 /* KatFactsApp.swift */; };
 		8286312B2989F11E00D56889 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286312A2989F11E00D56889 /* ContentView.swift */; };
 		8286312D2989F12000D56889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8286312C2989F12000D56889 /* Assets.xcassets */; };
 		828631302989F12000D56889 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8286312F2989F12000D56889 /* Preview Assets.xcassets */; };
 		8286313A2989F12000D56889 /* KatFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828631392989F12000D56889 /* KatFactsTests.swift */; };
-		828631442989F12000D56889 /* KatFactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828631432989F12000D56889 /* KatFactsUITests.swift */; };
-		828631462989F12000D56889 /* KatFactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828631452989F12000D56889 /* KatFactsUITestsLaunchTests.swift */; };
 		828631532989F40500D56889 /* KatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828631522989F40500D56889 /* KatView.swift */; };
 		828631572989F52500D56889 /* KatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828631562989F52500D56889 /* KatViewModel.swift */; };
 		8286315A2989F6B100D56889 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828631592989F6B100D56889 /* EndPoint.swift */; };
@@ -41,6 +40,8 @@
 /* Begin PBXFileReference section */
 		8281A061298B1F1000E57073 /* CatFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFact.swift; sourceTree = "<group>"; };
 		8281A063298B530C00E57073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8281A064298C77BD00E57073 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		8281A066298C826700E57073 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		828631252989F11E00D56889 /* KatFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KatFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828631282989F11E00D56889 /* KatFactsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatFactsApp.swift; sourceTree = "<group>"; };
 		8286312A2989F11E00D56889 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,8 +50,6 @@
 		828631352989F12000D56889 /* KatFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		828631392989F12000D56889 /* KatFactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatFactsTests.swift; sourceTree = "<group>"; };
 		8286313F2989F12000D56889 /* KatFactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatFactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		828631432989F12000D56889 /* KatFactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatFactsUITests.swift; sourceTree = "<group>"; };
-		828631452989F12000D56889 /* KatFactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatFactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		828631522989F40500D56889 /* KatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatView.swift; sourceTree = "<group>"; };
 		828631562989F52500D56889 /* KatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatViewModel.swift; sourceTree = "<group>"; };
 		828631592989F6B100D56889 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -85,9 +84,9 @@
 		8286311C2989F11E00D56889 = {
 			isa = PBXGroup;
 			children = (
+				8281A066298C826700E57073 /* README.md */,
 				828631272989F11E00D56889 /* KatFacts */,
 				828631382989F12000D56889 /* KatFactsTests */,
-				828631422989F12000D56889 /* KatFactsUITests */,
 				828631262989F11E00D56889 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,21 +131,13 @@
 			path = KatFactsTests;
 			sourceTree = "<group>";
 		};
-		828631422989F12000D56889 /* KatFactsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				828631432989F12000D56889 /* KatFactsUITests.swift */,
-				828631452989F12000D56889 /* KatFactsUITestsLaunchTests.swift */,
-			);
-			path = KatFactsUITests;
-			sourceTree = "<group>";
-		};
 		828631542989F41100D56889 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				828631552989F47900D56889 /* ViewModels */,
 				8286312A2989F11E00D56889 /* ContentView.swift */,
 				828631522989F40500D56889 /* KatView.swift */,
+				8281A064298C77BD00E57073 /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8286315D298A2E7800D56889 /* KatServerClient.swift in Sources */,
+				8281A065298C77BD00E57073 /* SplashView.swift in Sources */,
 				8286312B2989F11E00D56889 /* ContentView.swift in Sources */,
 				8281A062298B1F1000E57073 /* CatFact.swift in Sources */,
 				8286315A2989F6B100D56889 /* EndPoint.swift in Sources */,
@@ -328,8 +320,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				828631462989F12000D56889 /* KatFactsUITestsLaunchTests.swift in Sources */,
-				828631442989F12000D56889 /* KatFactsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,8 +468,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +481,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -511,8 +500,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,7 +513,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -536,7 +524,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CMPB6CK7XT;
+				DEVELOPMENT_TEAM = LB69H5W3HZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -556,7 +544,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CMPB6CK7XT;
+				DEVELOPMENT_TEAM = LB69H5W3HZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
