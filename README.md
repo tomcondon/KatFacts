@@ -11,7 +11,7 @@ This is build for iPhone in portrait mode.
 
 The code was written so it would not explicitly fail for the user, 
 but display a placeholder image and text telling the user to try again.
-If the user has view images, but then fails, the user will continue to be looking
+If the user has viewed images, but then image loading fails fails, the user will continue to be looking
 at cached cat images, but the cat fact will default to the regular error text.
 
 This took me about 7 hours to do, of the 2 days. 
